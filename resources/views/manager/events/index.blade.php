@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-4">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8    " >
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <section class="text-gray-600 body-font">
@@ -35,7 +35,7 @@
                           <tbody>
                             @foreach ($events as $event)
                                 <tr>
-                                    <td class="px-4 py-3">{{ $event->name }}</td>
+                                    <td class="px-4 py-3 hover:bg-gray-100"><a href="{{ route('events.show', ['event' => $event->id]) }}">{{ $event->name }}</a></td>
                                     <td class="px-4 py-3">{{ $event->start_date }}</td>
                                     <td class="px-4 py-3">{{ $event->end_date }}</td>
                                     <td class="px-4 py-3">後程</td>
@@ -45,7 +45,9 @@
                             @endforeach
                           </tbody>
                         </table>
-                        {{ $events->links() }}
+                        <div class="mt-5">
+                            {{ $events->links() }}
+                        </div>
                       </div>
                       <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
 
